@@ -81,11 +81,55 @@ console.log(div); //HTMLCollection
 
 // console.log(c);
 
-
-console.log(typeof (10/0))
-console.log(typeof NaN)
-console.log(0.1 + 0.6)
+console.log(typeof (10 / 0));
+console.log(typeof NaN);
+console.log(0.1 + 0.6);
 
 console.log(9999999999999999);
 
 console.log((5).toString(2)); //binary
+
+let one = "mohamed";
+
+one[2] = "aa";
+
+console.log(one[one.length - 1]); //last index
+
+const arr = ["mohamed", "ahmed", "ali"];
+
+arr[2] = "zero";
+
+console.log(arr);
+
+let mo = "mo|ham|ed";
+
+console.log(mo.split("|"));
+
+console.log("ace".repeat(3));
+
+// console.log("heelo".charAt(8));
+
+console.log(Boolean());
+
+
+function test(){
+  return 
+}
+
+console.log(test());
+
+
+
+let toDay = new Date()
+
+console.log(toDay.toDateString());
+
+console.log(Date.now());
+
+
+const newfunc =function (){
+  console.log("hello World")
+  return "sd"
+}
+
+console.log(newfunc())
