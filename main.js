@@ -1,11 +1,11 @@
-document.getElementById("title").style.color = "red";
+// document.getElementById("title").style.color = "red";
 
-let card = document.getElementById("card");
+// let card = document.getElementById("card");
 
-card.addEventListener("click", function () {
-  let x = Math.random() * 100;
-  card.style.rotate = `${x}deg`;
-});
+// card.addEventListener("click", function () {
+//   let x = Math.random() * 100;
+//   card.style.rotate = `${x}deg`;
+// });
 
 //spread
 
@@ -109,27 +109,83 @@ console.log("ace".repeat(3));
 
 // console.log("heelo".charAt(8));
 
-console.log(Boolean());
+// console.log(Boolean());
 
+// function test() {
+//   return;
+// }
 
-function test(){
-  return 
+// console.log(test());
+
+// let toDay = new Date();
+
+// console.log(toDay.toDateString());
+
+// console.log(Date.now());
+
+// const newfunc = function () {
+//   console.log("hello World");
+//   return "sd";
+// };
+
+// console.log(newfunc());
+
+// let newSet = new Set([1, 1, 2, 3, 4, 5, 6, 7, 8, 88, 99, 9, 1, 10, 11, 11]);
+
+// console.log(newSet);
+
+// console.log(!!"hello");
+// console.log(!!0);
+
+// let obj1 = { name: "mohamed" };
+// let obj2 = { name: "mohamed" };
+
+// console.log(obj1 === obj2);
+
+// let obj1 = "mohamed";
+// let obj2 = "mohamed";
+
+// console.log(obj1 === obj2);
+
+// console.log(NaN === NaN);
+
+// console.log(0 || 42);
+
+// console.log("mohamed" || "mohamed AHmed");
+
+let form = document.querySelector(".form");
+
+let cards = document.querySelector(".cards");
+function createPofile() {
+  let name = document.getElementById("name").value.trim();
+  let age = document.getElementById("age").value.trim();
+  let hobbies = document.getElementById("hobbies").value.trim();
+
+  const allHobbies = hobbies
+    .split(",")
+    .map((hobby) => hobby.trim())
+    .filter((hobby) => hobby !== "");
+  console.log(allHobbies);
+
+  cards.innerHTML += `
+                    <div class="card">
+                      <h2>${name}</h2>
+                      <p>${age}</p>
+                      <ul>
+                        ${allHobbies.map((hobby)=> `<li>${hobby.toUpperCase()}</li>`).join("")}
+                      </ul>
+                    </div>
+  `;
 }
 
-console.log(test());
-
-
-
-let toDay = new Date()
-
-console.log(toDay.toDateString());
-
-console.log(Date.now());
-
-
-const newfunc =function (){
-  console.log("hello World")
-  return "sd"
+function emptyPofile() {
+  let name = (document.getElementById("name").value = "");
+  let age = (document.getElementById("age").value = "");
+  let hobbies = (document.getElementById("hobbies").value = "");
 }
 
-console.log(newfunc())
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  createPofile();
+  emptyPofile();
+});

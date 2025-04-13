@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #eee;
+}
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.task {
+  margin-top: 50px;
+  /* background-color: #fff; */
+  
+  /* width: 500px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.task h2 {
+  display: block;
+}
+
+.task form {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.task form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.task form label {
+  margin-bottom: 10px;
+}
+
+.submit {
+  background-color: bisque;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profiles {
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: crimson;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+}
+
+.card ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.card ul li {
+  background-color: #fff;
+  color: black;
+  padding: 4px 10px;
+  border-radius: 5px;
+}

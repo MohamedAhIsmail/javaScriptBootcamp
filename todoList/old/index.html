@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+</head>
+<body>
+  <h1>Todo List</h1>
+  <form id="todo-form">
+    <input type="text" id="todo-input" placeholder="Add a new task" required>
+    <button type="submit">Add</button>
+  </form>
+  <ul id="todo-list"></ul>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('todo-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const input = document.getElementById('todo-input');
+      const newTask = input.value.trim();
+      if (newTask) {
+        const li = document.createElement('li');
+        li.textContent = newTask;
+        document.getElementById('todo-list').appendChild(li);
+        input.value = '';
+      }
+    });
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      padding: 10px;
+      background-color: #f8f9fa;
+      margin-bottom: 5px;
+      border-radius: 4px;
+    }
+    li:hover {
+      background-color: #e2e6ea;
+    }
+    li.completed {
+      text-decoration: line-through;
+      color: #6c757d;
+    }
+    li.completed:hover {
+      background-color: #e2e6ea;
+    }
+    li button {
+      margin-left: 10px;
+      background-color: #dc3545;
+    }
+    li button:hover {
+      background-color: #c82333;
+    }
+    li button.remove {
+      background-color: #dc3545;
+    }
+    li button.remove:hover {
+      background-color: #c82333;
+    }
+    li button.complete {
+      background-color: #28a745;
+    }
+    li button.complete:hover {
+      background-color: #218838;
+    }
+    li button.remove, li button.complete {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+    li button.remove:hover, li button.complete:hover {
+      background-color: #c82333;
+    }
+    li button.complete:hover {
+      background-color: #218838;
+    }
+    li button.remove:hover {
+      background-color: #c82333;
+    }
+    </style>
+</body>
+</html>
