@@ -1,0 +1,57 @@
+var pName = document.getElementById("productName");
+var pPrice = document.getElementById("productPrice");
+var pCat = document.getElementById("productCat");
+var pDesc = document.getElementById("productDesc");
+var btn = document.getElementById("btn");
+
+var productsList = [];
+if (window.localStorage.getItem("Products")) {
+  productsList = JSON.parse(window.localStorage.getItem("Products"));
+  displayProducts()
+}
+
+btn.addEventListener("click", function addProduct() {
+  var product = {
+    productName: pName.value,
+    productPrice: pPrice.value,
+    productCat: pCat.value,
+    productDesc: pDesc.value,
+  };
+
+  productsList.push(product);
+  console.log(productsList);
+  displayProducts();
+  emptyInputs();
+  window.localStorage.setItem("Products", JSON.stringify(productsList));
+});
+
+function displayProducts() {
+  var item = "";
+  for (var i = 0; i < productsList.length; i++) {
+    item += `
+        <tr>
+            <td>${i + 1}</td>
+            <td>${productsList[i].productName}</td>
+            <td>${productsList[i].productPrice}</td>
+            <td>${productsList[i].productCat}</td>
+            <td>${productsList[i].productDesc}</td>
+            <td><button onclick="updateProduct()" class="btn btn-outline-warning">Update</button></td>
+            <td><button onclick="deleteProduct(${i})" class="btn btn-outline-danger">Delete</button></td>
+          </tr>
+    `;
+  }
+  document.getElementById("tbody").innerHTML = item;
+}
+
+function deleteProduct(i) {
+  productsList.splice(i, 1)
+  window.localStorage.setItem("Products", JSON.stringify(productsList))
+  displayProducts()
+}
+
+function emptyInputs() {
+  pName.value = "";
+  pPrice.value = "";
+  pCat.value = "";
+  pDesc.value = "";
+}
