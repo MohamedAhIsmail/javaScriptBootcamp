@@ -7,7 +7,7 @@ var btn = document.getElementById("btn");
 var productsList = [];
 if (window.localStorage.getItem("Products")) {
   productsList = JSON.parse(window.localStorage.getItem("Products"));
-  displayProducts()
+  displayProducts();
 }
 
 btn.addEventListener("click", function addProduct() {
@@ -35,7 +35,7 @@ function displayProducts() {
             <td>${productsList[i].productPrice}</td>
             <td>${productsList[i].productCat}</td>
             <td>${productsList[i].productDesc}</td>
-            <td><button onclick="updateProduct()" class="btn btn-outline-warning">Update</button></td>
+            <td><button onclick="updateProduct(${i})" class="btn btn-outline-warning">Update</button></td>
             <td><button onclick="deleteProduct(${i})" class="btn btn-outline-danger">Delete</button></td>
           </tr>
     `;
@@ -44,9 +44,23 @@ function displayProducts() {
 }
 
 function deleteProduct(i) {
-  productsList.splice(i, 1)
-  window.localStorage.setItem("Products", JSON.stringify(productsList))
-  displayProducts()
+  productsList.splice(i, 1);
+  displayProducts();
+  window.localStorage.setItem("Products", JSON.stringify(productsList));
+}
+
+function updateProduct(i) {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
+  btn.innerHTML = "Update Product";
+
+  pName.value = productsList[i].productName;
+  pPrice.value = productsList[i].productPrice;
+  pCat.value = productsList[i].productCat;
+  pDesc.value = productsList[i].productDesc;
 }
 
 function emptyInputs() {
