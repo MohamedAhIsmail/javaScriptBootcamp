@@ -4,6 +4,9 @@ var pCat = document.getElementById("productCat");
 var pDesc = document.getElementById("productDesc");
 var searchInput = document.getElementById("search");
 var btn = document.getElementById("btn");
+var updateBtn = document.getElementById("btnUpdate");
+
+var index = 0;
 
 var productsList = [];
 if (window.localStorage.getItem("Products")) {
@@ -44,26 +47,6 @@ btn.addEventListener("click", function addProduct() {
 //   document.getElementById("tbody").innerHTML = item;
 // }
 
-function deleteProduct(i) {
-  productsList.splice(i, 1);
-  displayProducts();
-  window.localStorage.setItem("Products", JSON.stringify(productsList));
-}
-
-function updateProduct(i) {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-
-  btn.innerHTML = "Update Product";
-
-  pName.value = productsList[i].productName;
-  pPrice.value = productsList[i].productPrice;
-  pCat.value = productsList[i].productCat;
-  pDesc.value = productsList[i].productDesc;
-}
-
 function displayProducts() {
   var item = "";
   for (var i = 0; i < productsList.length; i++) {
@@ -91,6 +74,48 @@ function displayProducts() {
 
   document.getElementById("tbody").innerHTML = item;
 }
+
+function deleteProduct(i) {
+  productsList.splice(i, 1);
+  displayProducts();
+  window.localStorage.setItem("Products", JSON.stringify(productsList));
+}
+
+function updateProduct(i) {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
+  updateBtn.classList.remove("d-none");
+  btn.classList.add("d-none");
+
+  pName.value = productsList[i].productName;
+  pPrice.value = productsList[i].productPrice;
+  pCat.value = productsList[i].productCat;
+  pDesc.value = productsList[i].productDesc;
+
+  index = i;
+
+  console.log(index);
+}
+
+updateBtn.addEventListener("click", () => {
+  var product = {
+    productName: pName.value,
+    productPrice: pPrice.value,
+    productCat: pCat.value,
+    productDesc: pDesc.value,
+  };
+
+  productsList.splice(index, 1, product);
+  console.log(product);
+  emptyInputs();
+  displayProducts();
+  window.localStorage.setItem("Products", JSON.stringify(productsList));
+  btn.classList.remove("d-none")
+  updateBtn.classList.add("d-none")
+});
 
 function emptyInputs() {
   pName.value = "";
