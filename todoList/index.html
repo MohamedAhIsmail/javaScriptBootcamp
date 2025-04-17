@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo List</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  
-  <header>
-    <div class="container">
-      <h1>ToDO List</h1>
-    </div>
-  </header>
-  <main>
-    <div class="container">
-      <form action="" class="todoForm">
-        <input type="text" placeholder="Enter yout task" id="input">
-        <input type="submit" value="Add Task" id="submit">
-      </form>
-
-      <div class="tasks">
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="tasks">
+      <div class="container">
+        <div class="header">
+          <h3>Let's add our tasks</h3>
+          <div class="add">
+            <input
+              type="text"
+              id="taskInput"
+              placeholder="Write what you want to do..."
+            />
+            <button class="btn" id="btn">Add Task</button>
+          </div>
+        </div>
+        <div class="myTasks">
+          <h4>Your Tasks</h4>
+          <ul id="ul">
+            <!-- <li>
+              <div class="task">
+                <h3>task 1</h3>
+                <div>
+                  <button class="edite" id="edite">Edite</button>
+                  <button class="delete" id="delete">Delete</button>
+                </div>
+              </div>
+            </li> -->
+          </ul>
+        </div>
       </div>
     </div>
-  </main>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
