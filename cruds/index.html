@@ -30,37 +30,52 @@
           <input type="text" id="productCat" class="form-control" />
         </div>
         <div>
-          <label for="productName" class="form-label">Product Description</label>
+          <label for="productName" class="form-label"
+            >Product Description</label
+          >
           <input type="text" id="productDesc" class="form-control" />
         </div>
-        <button class="btn btn-success my-3 w-100 p-2" id="btn">Add Product</button>
+        <button class="btn btn-success my-3 w-100 p-2" id="btn">
+          Add Product
+        </button>
+        <div>
+          <input
+            oninput="displayProducts()"
+            type="search"
+            class="form-control my-2"
+            id="search"
+            placeholder="search by name or category..."
+          />
+        </div>
       </div>
     </div>
     <div class="container my-3" id="display">
-      <table class="table text-center">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Product Name</th>
-            <th>Product Price</th>
-            <th>Product Category</th>
-            <th>Product Description</th>
-            <th>Update</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody id="tbody">
-          <!-- <tr>
-            <td>1</td>
-            <td>Oppo</td>
-            <td>2000</td>
-            <td>Mobiles</td>
-            <td>New Mobile</td>
-            <td><button onclick="updateProduct()" class="btn btn-outline-warning">Update</button></td>
-            <td><button onclick="deleteProduct()" class="btn btn-outline-danger">Delete</button></td>
-          </tr> -->
-        </tbody>
-      </table>
+      <div class="res-table">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Product Name</th>
+              <th>Product Price</th>
+              <th>Product Category</th>
+              <th>Product Description</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <!-- <tr>
+              <td>1</td>
+              <td>Oppo</td>
+              <td>2000</td>
+              <td>Mobiles</td>
+              <td>New Mobile</td>
+              <td><button onclick="updateProduct()" class="btn btn-outline-warning">Update</button></td>
+              <td><button onclick="deleteProduct()" class="btn btn-outline-danger">Delete</button></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <script src="main.js"></script>
