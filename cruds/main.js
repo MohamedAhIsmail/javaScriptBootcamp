@@ -15,18 +15,20 @@ if (window.localStorage.getItem("Products")) {
 }
 
 btn.addEventListener("click", function addProduct() {
-  var product = {
-    productName: pName.value,
-    productPrice: pPrice.value,
-    productCat: pCat.value,
-    productDesc: pDesc.value,
-  };
+  if (pName.value != "" && pPrice.value != "" && pCat.value != "" && pDesc.value != "") {
+    var product = {
+      productName: pName.value,
+      productPrice: pPrice.value,
+      productCat: pCat.value,
+      productDesc: pDesc.value,
+    };
 
-  productsList.push(product);
-  console.log(productsList);
-  displayProducts();
-  emptyInputs();
-  window.localStorage.setItem("Products", JSON.stringify(productsList));
+    productsList.push(product);
+    console.log(productsList);
+    displayProducts();
+    emptyInputs();
+    window.localStorage.setItem("Products", JSON.stringify(productsList));
+  }
 });
 
 // function displayProducts() {
@@ -101,20 +103,23 @@ function updateProduct(i) {
 }
 
 updateBtn.addEventListener("click", () => {
-  var product = {
-    productName: pName.value,
-    productPrice: pPrice.value,
-    productCat: pCat.value,
-    productDesc: pDesc.value,
-  };
 
-  productsList.splice(index, 1, product);
-  console.log(product);
-  emptyInputs();
-  displayProducts();
-  window.localStorage.setItem("Products", JSON.stringify(productsList));
-  btn.classList.remove("d-none")
-  updateBtn.classList.add("d-none")
+  if (pName.value != "" && pPrice.value != "" && pCat.value != "" && pDesc.value != ""){
+    var product = {
+      productName: pName.value,
+      productPrice: pPrice.value,
+      productCat: pCat.value,
+      productDesc: pDesc.value,
+    };
+  
+    productsList.splice(index, 1, product);
+    console.log(product);
+    emptyInputs();
+    displayProducts();
+    window.localStorage.setItem("Products", JSON.stringify(productsList));
+    btn.classList.remove("d-none");
+    updateBtn.classList.add("d-none");
+  }
 });
 
 function emptyInputs() {
