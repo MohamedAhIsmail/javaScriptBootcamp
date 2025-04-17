@@ -1,7 +1,5 @@
 let input = document.getElementById("taskInput");
 let add = document.getElementById("add");
-let edite = document.getElementById("edite");
-let deleteBtn = document.getElementById("delete");
 let ul = document.getElementById("ul");
 let update = document.getElementById("update");
 let tasks = [];
@@ -15,7 +13,7 @@ if (window.localStorage.getItem("tasks")) {
 displayTasks();
 
 add.addEventListener("click", () => {
-  if (input.value == "") {
+  if (input.value.trim() === "") {
     alert("Please Add Tasks First!");
   } else {
     let task = {
@@ -25,12 +23,16 @@ add.addEventListener("click", () => {
     tasks.push(task);
     empty();
     displayTasks();
-    window.localStorage.setItem("tasks", JSON.stringify(tasks));
+    saveTasks();
   }
 });
 
 function empty() {
   input.value = "";
+}
+
+function saveTasks() {
+  window.localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 function displayTasks() {
@@ -43,8 +45,8 @@ function displayTasks() {
                 <div class="task">
                   <h3>${tasks[i].name}</h3>
                   <div class="btns">
-                    <button onclick="editeTask(${i})" class="edite" id="edite">Edite</button>
-                    <button onclick="deleteTask(${i})" class="delete" id="delete">Delete</button>
+                    <button onclick="editeTask(${i})" class="edite">Edite</button>
+                    <button onclick="deleteTask(${i})" class="delete">Delete</button>
                   </div>
                 </div>
               </li>
@@ -59,7 +61,7 @@ function displayTasks() {
 
 function deleteTask(i) {
   tasks.splice(i, 1);
-  window.localStorage.setItem("tasks", JSON.stringify(tasks));
+  saveTasks();
   displayTasks();
 }
 
@@ -70,7 +72,7 @@ function editeTask(i) {
     behavior: "smooth",
   });
   input.value = tasks[i].name;
-  update.classList.add("block");
+  update.style.display = "block";
   index = i;
 }
 
@@ -84,7 +86,7 @@ update.addEventListener("click", () => {
 
     tasks.splice(index, 1, task);
 
-    window.localStorage.setItem("tasks", JSON.stringify(tasks));
+    saveTasks();
 
     displayTasks();
     add.classList.remove("none");

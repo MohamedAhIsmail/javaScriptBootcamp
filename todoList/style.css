@@ -6,7 +6,7 @@
 
 body {
   background-color: #eee;
-  font-family:monospace;
+  font-family: monospace;
 }
 
 .container {
@@ -60,6 +60,8 @@ button {
   background-color: #fff;
   padding: 20px;
   min-height: 300px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .myTasks h4 {
@@ -75,10 +77,14 @@ button {
 }
 
 ul li {
-  background-color: #f5f5f5;
   padding: 10px;
-  margin-bottom: 15px;
+  background-color: #f8f9fa;
+  margin-bottom: 5px;
   border-radius: 4px;
+}
+
+ul li:last-child {
+  margin-bottom: 0;
 }
 
 .task {
@@ -94,6 +100,10 @@ ul li {
 button.btn {
   width: 10%;
   background-color: #fff;
+}
+
+button.btn:hover {
+  background-color: #e7eaec;
 }
 
 .btns {
@@ -116,6 +126,7 @@ button.btn {
 .delete {
   border: 1px solid red;
   color: red;
+  background-color: #f8f9fa;
 }
 
 .delete:hover {
@@ -126,6 +137,7 @@ button.btn {
 .edite {
   border: 1px solid rgb(255, 167, 3);
   color: rgb(255, 167, 3);
+  background-color: #f8f9fa;
 }
 
 .edite:hover {
@@ -139,7 +151,3 @@ button.btn {
   font-size: 20px;
   color: #ccc;
 }
-
-/* .update {
-  display: none;
-} */
