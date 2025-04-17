@@ -18,6 +18,7 @@ add.addEventListener("click", () => {
   } else {
     let task = {
       name: input.value,
+      isCompleted: false,
     };
 
     tasks.push(task);
@@ -43,7 +44,11 @@ function displayTasks() {
       task += `
               <li>
                 <div class="task">
-                  <h3>${tasks[i].name}</h3>
+                  <h3 class="title" style="color: ${
+                    tasks[i].isCompleted ? "green" : "black"
+                  }; text-decoration: ${
+        tasks[i].isCompleted ? "line-through" : "none"
+      };" onclick="completeTask(${i})">${tasks[i].name}</h3>
                   <div class="btns">
                     <button onclick="editeTask(${i})" class="edite">Edite</button>
                     <button onclick="deleteTask(${i})" class="delete">Delete</button>
@@ -77,7 +82,7 @@ function editeTask(i) {
 }
 
 update.addEventListener("click", () => {
-  if (input.value == "") {
+  if (input.value.trim() === "") {
     alert("Updated Task Can not be empty!");
   } else {
     let task = {
@@ -89,8 +94,15 @@ update.addEventListener("click", () => {
     saveTasks();
 
     displayTasks();
-    add.classList.remove("none");
+    add.style.display = "block";
     update.style.display = "none";
     empty();
   }
 });
+
+function completeTask(i) {
+  tasks[i].isCompleted = !tasks[i].isCompleted;
+  saveTasks();
+
+  displayTasks();
+}

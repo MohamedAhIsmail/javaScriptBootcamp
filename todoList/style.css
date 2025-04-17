@@ -151,3 +151,7 @@ button.btn:hover {
   font-size: 20px;
   color: #ccc;
 }
+
+.title {
+  cursor: pointer;
+}
