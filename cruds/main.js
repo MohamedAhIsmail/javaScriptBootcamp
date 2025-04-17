@@ -98,8 +98,6 @@ function updateProduct(i) {
   pDesc.value = productsList[i].productDesc;
 
   index = i;
-
-  console.log(index);
 }
 
 updateBtn.addEventListener("click", () => {
