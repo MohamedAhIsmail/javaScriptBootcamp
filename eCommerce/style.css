@@ -14,6 +14,10 @@ a {
   color: black;
 }
 
+a:hover {
+  color: cornflowerblue;
+}
+
 .container {
   width: 85%;
   margin-left: auto;
