@@ -30,32 +30,32 @@ let products = [
     price: 6000,
   },
   {
-    name: "Addaptor Laptop 2025",
+    name: "Lenovo Laptop 2025",
     img: "./images/laptop.png",
     price: 7000,
   },
   {
-    name: "Addaptor Laptop 2025",
+    name: "Silver Laptop 2025",
     img: "./images/laptopo.png",
     price: 8000,
   },
   {
-    name: "Addaptor Laptop 2025",
+    name: "Microsoft Laptop 2025",
     img: "./images/new-lap.png",
     price: 9000,
   },
   {
-    name: "Addaptor Laptop 2025",
+    name: "PC Bundle RGB",
     img: "./images/pc-build.png",
     price: 10000,
   },
   {
-    name: "Addaptor Laptop 2025",
+    name: "Gaming PC 2025",
     img: "./images/pc.png",
     price: 11000,
   },
   {
-    name: "Addaptor Laptop 2025",
+    name: "RAM 2 X 16 2025",
     img: "./images/ram.png",
     price: 12000,
   },
