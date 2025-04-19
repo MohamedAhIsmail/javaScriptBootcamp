@@ -60,9 +60,10 @@ let products = [
     price: 12000,
   },
 ];
-
+let cart = JSON.parse(window.localStorage.getItem("cart")) || [];
 let container = document.getElementById("products");
 let searchInput = document.getElementById("search");
+let cartCounter = document.querySelector(".cart");
 
 function displayProducts() {
   let product = ``;
@@ -75,14 +76,14 @@ function displayProducts() {
     ) {
       product += `
       <div class="product">
-          <img src="${products[i].img}" alt="${products[i].name}">
-          <h2>${products[i].name}</h2>
-          <p>$${products[i].price}</p>
-          <div class="btns">
-            <button class="btn">Add to Cart</button>
-            <button class="btn">Details</button>
-          </div>
+        <img src="${products[i].img}" alt="${products[i].name}">
+        <h2>${products[i].name}</h2>
+        <p>$${products[i].price}</p>
+        <div class="btns">
+          <button class="btn addToCart" onclick="addToCart(${i})">Add to Cart</button>
+          <button class="btn">Details</button>
         </div>
+      </div>
   `;
     }
   }
@@ -94,27 +95,20 @@ displayProducts();
 
 searchInput.addEventListener("input", displayProducts);
 
-// searchInput.addEventListener("input", function () {
-//   let product = ``;
+function addToCart(i) {
+  cart.push(products[i]);
+  console.log(cart);
 
-//   for (let i = 0; i < products.length; i++) {
-//     if (
-//       products[i].name
-//         .toLocaleLowerCase()
-//         .includes(searchInput.value.toLowerCase())
-//     ) {
-//       product += `
-//       <div class="product">
-//           <img src="${products[i].img}" alt="${products[i].name}">
-//           <h2>${products[i].name}</h2>
-//           <p>$${products[i].price}</p>
-//           <div class="btns">
-//             <button class="btn">Add to Cart</button>
-//             <button class="btn">Details</button>
-//           </div>
-//         </div>
-//   `;
-//     }
-//   }
-//   container.innerHTML = product;
-// });
+  cartCounter.innerHTML = cart.length;
+  saveData();
+}
+
+function saveData() {
+  window.localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function displayCounter() {
+  cartCounter.innerHTML = cart.length;
+}
+
+displayCounter();
