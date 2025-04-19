@@ -61,27 +61,60 @@ let products = [
   },
 ];
 
-console.log(products.length);
-
 let container = document.getElementById("products");
+let searchInput = document.getElementById("search");
+
 function displayProducts() {
   let product = ``;
 
   for (let i = 0; i < products.length; i++) {
-    product += `
-        <div class="product">
-            <img src="${products[i].img}" alt="${products[i].name}">
-            <h2>${products[i].name}</h2>
-            <p>$${products[i].price}</p>
-            <div class="btns">
-              <button class="btn">Add to Cart</button>
-              <button class="btn">Details</button>
-            </div>
+    if (
+      products[i].name
+        .toLocaleLowerCase()
+        .includes(searchInput.value.toLowerCase())
+    ) {
+      product += `
+      <div class="product">
+          <img src="${products[i].img}" alt="${products[i].name}">
+          <h2>${products[i].name}</h2>
+          <p>$${products[i].price}</p>
+          <div class="btns">
+            <button class="btn">Add to Cart</button>
+            <button class="btn">Details</button>
           </div>
-    `;
+        </div>
+  `;
+    }
   }
 
   container.innerHTML = product;
 }
 
 displayProducts();
+
+searchInput.addEventListener("input", displayProducts);
+
+// searchInput.addEventListener("input", function () {
+//   let product = ``;
+
+//   for (let i = 0; i < products.length; i++) {
+//     if (
+//       products[i].name
+//         .toLocaleLowerCase()
+//         .includes(searchInput.value.toLowerCase())
+//     ) {
+//       product += `
+//       <div class="product">
+//           <img src="${products[i].img}" alt="${products[i].name}">
+//           <h2>${products[i].name}</h2>
+//           <p>$${products[i].price}</p>
+//           <div class="btns">
+//             <button class="btn">Add to Cart</button>
+//             <button class="btn">Details</button>
+//           </div>
+//         </div>
+//   `;
+//     }
+//   }
+//   container.innerHTML = product;
+// });
