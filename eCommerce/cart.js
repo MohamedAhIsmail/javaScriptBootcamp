@@ -14,6 +14,9 @@ function displayCartItems() {
           <img src="${cartItems[i].img}" alt="${cartItems[i].name}">
           <h2>${cartItems[i].name}</h2>
           <p>$${cartItems[i].price}</p>
+          <div class="btns">
+          <button class="btn addToCart" onclick="deleteProduct(${i})">Delete</button>
+        </div>
         </div>
       `;
     }
@@ -29,3 +32,14 @@ function displayCounter() {
 }
 
 displayCounter();
+
+
+function deleteProduct(i) {
+  cartItems.splice(i, 1)
+  console.log(cartItems);
+
+  window.localStorage.setItem("cart", JSON.stringify(cartItems))
+  displayCounter()
+  displayCartItems()
+  
+}
