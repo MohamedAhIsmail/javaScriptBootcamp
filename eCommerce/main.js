@@ -81,7 +81,7 @@ function displayProducts() {
         <p>$${products[i].price}</p>
         <div class="btns">
           <button class="btn addToCart" onclick="addToCart(${i})">Add to Cart</button>
-          <button class="btn">Details</button>
+          <a href="./Details.html"><button onclick="goDetails(${i})" class="btn">Details</button></a>
         </div>
       </div>
   `;
@@ -112,3 +112,9 @@ function displayCounter() {
 }
 
 displayCounter();
+
+function goDetails(i) {
+  console.log(products[i]);
+
+  window.localStorage.setItem("singleProduct", JSON.stringify(products[i]));
+}

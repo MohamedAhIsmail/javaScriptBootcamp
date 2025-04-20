@@ -138,3 +138,33 @@ main .products .product {
   color: #fff;
   background-color: silver;
 }
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+
+.image {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px;
+} 
+
+.image img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.details .price {
+  font-size: 30px;
+}
+
+img {
+  transition: 0.3s;
+}
+
+img:hover {
+  transform: scale(1.04);
+}
