@@ -91,7 +91,7 @@ main .search input {
 
 main .products {
   border-top: 1px solid #eee;
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -167,4 +167,14 @@ img {
 
 img:hover {
   transform: scale(1.04);
+}
+
+.desc {
+  width: 500px;
+  text-align: justify;
+  margin-top: 30px;
+}
+
+.addToCart {
+  margin-top: 20px;
 }
