@@ -2,12 +2,17 @@ let cartContainer = document.querySelector(".products");
 let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 let cartCounter = document.querySelector(".cart");
 
+let deleteAll = document.querySelector(".deleteAll")
+let deleteBtn = document.querySelector(".delete")
+
 function displayCartItems() {
   let content = "";
 
   if (cartItems.length === 0) {
     content = "<p>Your cart is empty.</p>";
+    if (deleteAll) deleteAll.style.display = "none";
   } else {
+    if (deleteAll) deleteAll.style.display = "block";
     for (let i = 0; i < cartItems.length; i++) {
       content += `
         <div class="product">
@@ -40,6 +45,13 @@ function deleteProduct(i) {
 
   window.localStorage.setItem("cart", JSON.stringify(cartItems))
   displayCounter()
-  displayCartItems()
-  
+  displayCartItems() 
 }
+
+
+deleteBtn.addEventListener("click", ()=> {
+  window.localStorage.removeItem("cart")
+  cartItems = [];
+    displayCounter();
+    displayCartItems();
+})
