@@ -181,10 +181,24 @@ img:hover {
 .topCart {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .topCart .total {
   font-size: 20px;
   font-weight: bold;
   color: cadetblue;
+}
+
+.deleteAll button,
+.delete {
+  border: 1px solid red;
+  background-color: transparent;
+  color: red;
+}
+
+.deleteAll button:hover,
+.delete:hover {
+  background-color: red;
+  color: #fff;
 }

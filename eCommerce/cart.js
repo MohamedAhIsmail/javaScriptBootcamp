@@ -20,7 +20,7 @@ function displayCartItems() {
           <h2>${cartItems[i].name}</h2>
           <p>$${cartItems[i].price}</p>
           <div class="btns">
-          <button class="btn addToCart" onclick="deleteProduct(${i})">Delete</button>
+          <button class="btn delete" onclick="deleteProduct(${i})">Delete</button>
         </div>
         </div>
       `;
