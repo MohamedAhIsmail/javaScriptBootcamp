@@ -30,3 +30,10 @@
   transition: 0.3s;
   text-align: center;
 }
+
+.grad {
+  height: 10px;
+  background-color: red;
+  width: 10%;
+  transition: 10s;
+}
