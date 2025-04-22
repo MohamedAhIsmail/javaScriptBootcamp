@@ -8,7 +8,7 @@
 
 let childs = document.querySelectorAll(".child");
 
-console.log(childs);
+// console.log(childs);
 
 for (let i = 0; i < childs.length; i++) {
   // childs[i].addEventListener("click", function(e){
@@ -26,12 +26,12 @@ for (let i = 0; i < childs.length; i++) {
   });
 }
 
-document.addEventListener("contextmenu", (e) => {
-  // e.preventDefault()
-});
+// document.addEventListener("contextmenu", (e) => {
+//   // e.preventDefault()
+// });
 
-let btn = document.querySelector("button");
-console.log(btn);
+// let btn = document.querySelector("button");
+// console.log(btn);
 
 // btn.onclick = function () {
 //   document.querySelector("h3").style.color = "tomato";
@@ -41,21 +41,52 @@ console.log(btn);
 //   console.log("hllow");
 // };
 
-btn.addEventListener("click", function () {
-  console.log("hey");
-});
+// btn.addEventListener("click", function () {
+//   console.log("hey");
+// });
 
-btn.addEventListener("click", () => {
-  document.querySelector("h3").style.color = "green";
-});
+// btn.addEventListener("click", () => {
+//   document.querySelector("h3").style.color = "green";
+// });
 
-let grad = document.querySelector(".grad");
+// let grad = document.querySelector(".grad");
 
-console.log(grad);
+// console.log(grad);
 
-window.onscroll = function () {
-  console.log(window.scrollY);
-  if (window.scrollY == 100) {
-    grad.style.width = "100%";
-  }
-};
+// window.onscroll = function () {
+//   console.log(window.scrollY);
+//   if (window.scrollY == 100) {
+//     grad.style.width = "100%";
+//   }
+// };
+
+// slider
+
+// let imgArr = ["Image1", "Image2 ", "Image3", "Image4", "Image5"];
+
+// let images = document.querySelector(".images");
+
+// let prev = document.querySelector(".prev");
+
+// let next = document.querySelector(".next");
+
+// console.log(imgArr, images, prev, next);
+
+// for (let i = 0; i < imgArr.length; i++) {
+//   index = imgArr[i]
+//   next.addEventListener("click", ()=>{
+//     document.querySelector(".img").innerHTML = `${imgArr[i+1]}`
+//   })
+// }
+
+
+let images = document.querySelectorAll('.item img')
+
+console.log(images);
+
+for(let i = 0; i< images.length; i++){
+  images[i].addEventListener("click", function(){
+    console.log("hello");
+    
+  })
+}

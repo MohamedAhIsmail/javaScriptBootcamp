@@ -1,118 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dom</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <div class="parent">
+      <div class="child">Mohamed</div>
+      <div class="child">Mohamed</div>
+      <div class="child">Mohamed</div>
+      <div class="child">Mohamed</div>
+      <div class="child">Mohamed</div>
+    </div> -->
 
-  <div class="parent">
-    <div class="child">Mohamed</div>
-    <div class="child">Mohamed</div>
-    <div class="child">Mohamed</div>
-    <div class="child">Mohamed</div>
-    <div class="child">Mohamed</div>
-  </div>
+    <div class="container-fluid my-4">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="item position-relative">
+            <img src="images/babycar.png" class="w-100 d-block" />
+            <div class="caption text-center bg-warning p-1">
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>Lorem ipsum dolor sit amet consectetur Doloremque, quam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="item position-relative">
+            <img src="images/canon.png" class="w-100 d-block" />
+            <div class="caption text-center bg-warning p-1">
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>Lorem ipsum dolor sit amet consectetur Doloremque, quam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="item position-relative">
+            <img src="images/foot.png" class="w-100 d-block" />
+            <div class="caption text-center bg-warning p-1">
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>Lorem ipsum dolor sit amet consectetur Doloremque, quam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="item position-relative">
+            <img src="images/jacket.png" class="w-100 d-block" />
+            <div class="caption text-center bg-warning p-1">
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>Lorem ipsum dolor sit amet consectetur Doloremque, quam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="item position-relative">
+            <img src="images/laptop.png" class="w-100 d-block" />
+            <div class="caption text-center bg-warning p-1">
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>Lorem ipsum dolor sit amet consectetur Doloremque, quam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="item position-relative">
+            <img src="images/babycar.png" class="w-100 d-block" />
+            <div class="caption text-center bg-warning p-1">
+              <h4>Lorem ipsum dolor sit.</h4>
+              <p>Lorem ipsum dolor sit amet consectetur Doloremque, quam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <h3>MEdo</h3>
-  <h3>MEdo</h3>
+    <div class="overlay d-none">
+      <div class="imageInside">
+        <i id="prev" class="fa-solid fa-arrow-left"></i>
+        <i id="close" class="fa-solid fa-xmark"></i>
+        <i id="next" class="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
 
-  <button>click</button>
-
-  <div class="grad"></div>
-
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  
-  <p>Lorem ipsum dolor sit amet.</p>
-  <script src="script.js"></script>
-</body>
-</html> 
+    <script src="script.js"></script>
+  </body>
+</html>
