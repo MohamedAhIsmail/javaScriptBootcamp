@@ -79,6 +79,8 @@ for (let i = 0; i < childs.length; i++) {
 //   })
 // }
 
+// images pop up and slider
+
 // let images = document.querySelectorAll(".item img");
 let images = Array.from(document.querySelectorAll(".item img"));
 let overlay = document.querySelector(".overlay");
@@ -86,15 +88,14 @@ let closeBtn = document.getElementById("close");
 let imageInside = document.querySelector(".imageInside");
 let next = document.getElementById("next");
 let prev = document.getElementById("prev");
-
-// console.log();
+let index;
 
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener("click", function (e) {
     imageInside.style.backgroundImage = `url(${images[i].getAttribute("src")})`;
-    console.log(images[i].getAttribute("src"));
-
+    // console.log(images[i].getAttribute("src"));
     overlay.classList.remove("d-none");
+    index = i;
   });
 }
 
@@ -103,6 +104,22 @@ closeBtn.addEventListener("click", () => {
 });
 
 next.addEventListener("click", () => {
-  
-  
+  index++;
+
+  if (index == images.length) {
+    index = 0;
+  }
+  imageInside.style.backgroundImage = `url(${images[index].getAttribute(
+    "src"
+  )})`;
+});
+
+prev.addEventListener("click", () => {
+  index--;
+  if (index < 0) {
+    index = images.length - 1;
+  }
+  imageInside.style.backgroundImage = `url(${images[index].getAttribute(
+    "src"
+  )})`;
 });
