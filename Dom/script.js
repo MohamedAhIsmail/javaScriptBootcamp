@@ -79,14 +79,30 @@ for (let i = 0; i < childs.length; i++) {
 //   })
 // }
 
+// let images = document.querySelectorAll(".item img");
+let images = Array.from(document.querySelectorAll(".item img"));
+let overlay = document.querySelector(".overlay");
+let closeBtn = document.getElementById("close");
+let imageInside = document.querySelector(".imageInside");
+let next = document.getElementById("next");
+let prev = document.getElementById("prev");
 
-let images = document.querySelectorAll('.item img')
+// console.log();
 
-console.log(images);
+for (let i = 0; i < images.length; i++) {
+  images[i].addEventListener("click", function (e) {
+    imageInside.style.backgroundImage = `url(${images[i].getAttribute("src")})`;
+    console.log(images[i].getAttribute("src"));
 
-for(let i = 0; i< images.length; i++){
-  images[i].addEventListener("click", function(){
-    console.log("hello");
-    
-  })
+    overlay.classList.remove("d-none");
+  });
 }
+
+closeBtn.addEventListener("click", () => {
+  overlay.classList.add("d-none");
+});
+
+next.addEventListener("click", () => {
+  
+  
+});
