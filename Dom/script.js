@@ -16,7 +16,21 @@ console.log(childs);
 
 
   for(let i = 0; i< childs.length; i++){
-    childs[i].addEventListener("click", function(e){
-      e.target.classList.add("new")
+    // childs[i].addEventListener("click", function(e){
+    //   e.target.classList.add("new")
+    // })
+
+    // childs[i].addEventListener("mousedown", function(){
+    //   childs[i].style.height = "300px"
+    // })
+    childs[i].addEventListener("dblclick", function(){
+      childs[i].style.height = "300px"
+    })
+    childs[i].addEventListener("mouseup", function(){
+      childs[i].style.height = "50px"
     })
   }
+
+  document.addEventListener("contextmenu", (e)=>{
+    // e.preventDefault()
+  })
