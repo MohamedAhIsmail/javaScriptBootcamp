@@ -27,7 +27,6 @@ request.send();
 
 request.addEventListener("readystatechange", () => {
   if (request.readyState == 4) {
-
     // console.log(request.response);
 
     let result = request.response;
@@ -40,15 +39,12 @@ request.addEventListener("readystatechange", () => {
 
 function printData(arr) {
   let post = ``;
-  
-  for (let i = 0; i < arr.length; i++) {
 
+  for (let i = 0; i < arr.length; i++) {
     post += `
-    <div class="post">
+        <div class="post">
           <h2 class="title">${arr[i].title}</h2>
-          <p class="desc">
-            ${arr[i].body}
-          </p>
+          <p class="desc">${arr[i].body}</p>
         </div>
     `;
   }
@@ -56,3 +52,4 @@ function printData(arr) {
 }
 
 // console.log(request.response);
+
