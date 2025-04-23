@@ -26,7 +26,7 @@ function showData(recipes) {
             <div class="col-md-3">
               <div class="recipe">
                 <img src="${recipes[i].image_url}" alt="" class="w-100">
-                <h2>${recipes[i].title}</h2>
+                <h2 class="fs-5 my-2">${recipes[i].title}</h2>
               </div>
             </div>
     

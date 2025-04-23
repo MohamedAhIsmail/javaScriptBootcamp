@@ -16,6 +16,7 @@ body {
 
 .select select {
   width: 30%;
+  cursor: pointer;
 }
 
 .recipe {
