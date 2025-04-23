@@ -1,11 +1,8 @@
 // Meals
 
 let req = new XMLHttpRequest();
-
 req.open("GET", "https://forkify-api.herokuapp.com/api/search?q=pasta");
-
 req.send();
-
 req.addEventListener("readystatechange", () => {
   if (req.readyState == 4) {
     // console.log(req.response);
