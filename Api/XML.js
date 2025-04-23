@@ -1,3 +1,5 @@
+// callback function
+
 // function getPizza(callback) {
 //   let request = new XMLHttpRequest();
 //   request.open("GET", "https://forkify-api.herokuapp.com/api/search?q=pizza");
@@ -93,4 +95,13 @@ function done() {
   console.log("All Done");
 }
 
-getPizza().then(getPasta).then(getCorn).then(done);
+// getPizza().then(getPasta).then(getCorn).then(done);
+
+async function printData() {
+  await getPizza();
+  await getPasta();
+  await getCorn();
+  done();
+}
+
+printData();
