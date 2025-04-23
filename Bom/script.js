@@ -46,3 +46,7 @@ minus.addEventListener("click", () => {
     minus.removeAttribute("disabled")
   }
 });
+
+// btn.addEventListener("click", ()=> {
+//   window.location.reload()
+// })
