@@ -21,7 +21,6 @@ getRecipe("corn");
 function showData(recipes) {
   let cartona = ``;
   for (let i = 0; i < recipes.length; i++) {
-    
     cartona += `
             <div class="col-md-3">
               <div class="recipe">
@@ -29,14 +28,13 @@ function showData(recipes) {
                 <h2 class="fs-5 my-2">${recipes[i].title}</h2>
               </div>
             </div>
-    
     `;
   }
   recipesContainer.innerHTML = cartona;
 }
 
-select.addEventListener("change", ()=> {
-  let choose = select.value
+select.addEventListener("change", () => {
+  let choose = select.value;
   // console.log(choose);
-  getRecipe(choose)
-})
+  getRecipe(choose);
+});
