@@ -1,15 +1,16 @@
 let cartArr = [];
 let cartContainer = document.querySelector(".data");
-console.log(cartContainer);
+allProducts = [];
+// console.log(cartContainer);
 
 if (window.localStorage.getItem("cart")) {
   cartArr = JSON.parse(window.localStorage.getItem("cart"));
 }
 
-console.log(cartArr);
+// console.log(cartArr);
 
 async function getProducts() {
-  let allProducts = [];
+  allProducts = [];
   for (let i = 0; i < cartArr.length; i++) {
     let data = await fetch(`https://fakestoreapi.com/products/${cartArr[i]}`);
     let product = await data.json();
@@ -42,7 +43,7 @@ function showProducts(products) {
                 <strong class="price d-block my-2 text-danger">$${
                   products[i].price
                 }</strong>
-                <button onclick="addToCart(${
+                <button onclick="deleteProduct(${
                   products[i].id
                 })" class="btn btn-danger w-100">Delete</button>
               </div>
@@ -50,4 +51,11 @@ function showProducts(products) {
     `;
   }
   cartContainer.innerHTML = product;
+}
+
+function deleteProduct(id) {
+  allProducts = allProducts.filter((product) => product.id != id);
+  cartArr = cartArr.filter((item) => item !== id);
+  showProducts(allProducts);
+  window.localStorage.setItem("cart", JSON.stringify(cartArr));
 }

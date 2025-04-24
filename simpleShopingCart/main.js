@@ -3,6 +3,10 @@ let dataContainer = document.querySelector(".data");
 
 let productsArr = [];
 
+if (window.localStorage.getItem("cart")) {
+  productsArr = JSON.parse(window.localStorage.getItem("cart"));
+}
+
 async function getProducts() {
   let data = await fetch("https://fakestoreapi.com/products");
   let result = await data.json();
@@ -42,15 +46,11 @@ function showProducts(products) {
   dataContainer.innerHTML = product;
 }
 
-// let str = "lorem lorem dsadas dadsa eadsadad";
-
-// console.log(str.split);
-
 function addToCart(id) {
   if (!productsArr.includes(id)) {
     productsArr.push(id);
   }
-  saveData()
+  saveData();
   console.log(productsArr);
 }
 
