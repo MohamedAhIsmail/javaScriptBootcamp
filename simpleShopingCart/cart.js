@@ -27,8 +27,16 @@ getProducts();
 function showProducts(products) {
   let product = ``;
 
-  for (let i = 0; i < products.length; i++) {
-    product += `
+  if (cartArr == 0) {
+    cartContainer.innerHTML = `
+    <div class="text-center cart">
+      <div class="empty fs-1">Your cart is empty!</div>
+      <button class="btn btn-primary w-25 mt-3"><a href="./index.html">Go Home</a></button>
+    </div>
+  `;
+  } else {
+    for (let i = 0; i < products.length; i++) {
+      product += `
             <div class="col-md-3">
               <div class="product bg-white rounded-1 p-3">
                 <img class="w-100" src="${products[i].image}" alt="" />
@@ -49,8 +57,9 @@ function showProducts(products) {
               </div>
             </div>
     `;
+    }
+    cartContainer.innerHTML = product;
   }
-  cartContainer.innerHTML = product;
 }
 
 function deleteProduct(id) {
@@ -58,4 +67,11 @@ function deleteProduct(id) {
   cartArr = cartArr.filter((item) => item !== id);
   showProducts(allProducts);
   window.localStorage.setItem("cart", JSON.stringify(cartArr));
+  updateCounter();
 }
+
+function updateCounter() {
+  document.querySelector(".counter").innerHTML = cartArr.length;
+}
+
+updateCounter();

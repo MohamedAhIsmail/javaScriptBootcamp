@@ -51,9 +51,17 @@ function addToCart(id) {
     productsArr.push(id);
   }
   saveData();
+  updateCounter()
   console.log(productsArr);
 }
 
 function saveData() {
   window.localStorage.setItem("cart", JSON.stringify(productsArr));
 }
+
+
+function updateCounter() {
+  document.querySelector(".counter").innerHTML = productsArr.length
+}
+
+updateCounter()
