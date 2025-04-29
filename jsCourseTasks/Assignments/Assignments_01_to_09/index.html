@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learn JavaScript</title>
+    <script>
+      // Code will not work because script will run before the element  and will not see it and will appear an error in console and block the code
+      // document.getElementById("el").style.color = "red";
+    </script>
+    <script>
+      // Code Two ==> will work be cause we use onload function it means the code will run after the fully load of the page and it will see the elemet
+      window.onload = function () {
+        // document.getElementById("el").style.color = "red";
+      };
+    </script>
+  </head>
+  <body>
+    <!-- <h1 id="el">Page Title</h1> -->
+    <script>
+      // Code Three ==> will work because it is after the selected element and the script will see the element
+      // document.getElementById("el").style.color = "red";
+    </script>
+
+    <!-- task 2 -->
+    <script src="main.js"></script>
+  </body>
+</html>
