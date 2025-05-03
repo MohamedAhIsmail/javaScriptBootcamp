@@ -20,30 +20,29 @@
 let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
 
 let solution = myString
-  .split(",")
-  .map((ele) => {
-    return !parseInt(ele) ? ele : "";
-  })
-  .join("")
   .split("")
+  .map((ele) => {
+    return ele !== "," ? ele : "";
+  })
   .filter((ele) => {
-    return ele != "_";
-  }).filter((ele, index, self)=> self.indexOf(ele) === (index)).join("")
+    return isNaN(parseInt(ele));
+  })
+  .reduce((acc, curr) => {
+    return acc + curr;
+  })
+  .slice(true, -isNaN(myString))
+  .replaceAll("_", " ");
 
 console.log(solution); // Elzero Web School
 
-
-
-
 // let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
-
 // let solution = myString
-//   .split(',')
-//   .filter(item => !item.match(/\d/) && item !== 'EE' && true)
-//   .map(item => item === '_' ? ' ' : item)
-//   .reduce((acc, curr, index) => 
-//     index === 0 ? curr.toUpperCase() : 
-//     curr === 'Z' ? acc : 
-//     acc + curr, '');
-
-// console.log(solution); // Elzero Web School
+//   .split(",")
+//   .map((ele) => {
+//     return !parseInt(ele) ? ele : "";
+//   })
+//   .join("")
+//   .split("")
+//   .filter((ele) => {
+//     return ele != "_";
+//   }).filter((ele, index, self)=> self.indexOf(ele) === (index)).join("")
