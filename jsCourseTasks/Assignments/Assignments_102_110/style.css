@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Tahoma";
+}
+
+.pop {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  height: 150px;
+  width: 400px;
+  margin: 400px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.3s;
+  border: 1px solid #ddd;
+}
+
+.close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
