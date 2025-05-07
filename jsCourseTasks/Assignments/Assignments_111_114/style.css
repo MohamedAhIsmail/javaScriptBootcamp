@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.parent {
+  width: 500px;
+  margin: 100px auto;
+}
+
+.colors {
+  padding: 10px;
+  background-color: #eee;
+  width: 70%;
+  margin: auto;
+}
+
+.colors ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 10px;
+}
+
+.colors ul li {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+.colors ul li:hover {
+  border: 2px solid #fff;
+}
+
+.main-color {
+  background-color: red;
+  height: 200px;
+  margin-top: 20px;
+}
+
+li[data-color="red"] {
+  background-color: red;
+}
+
+li[data-color="green"] {
+  background-color: green;
+}
+
+li[data-color="yellow"] {
+  background-color: yellow;
+}
+
+li[data-color="black"] {
+  background-color: black;
+}
+
+.active {
+  opacity: 1 !important;
+  background-color: bisque;
+}
