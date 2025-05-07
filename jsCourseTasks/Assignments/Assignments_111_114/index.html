@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignments_111_114</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="parent">
+    <!-- <div class="parent">
       <div class="colors">
         <ul>
           <li class="active" data-color="red"></li>
@@ -17,6 +23,60 @@
         </ul>
       </div>
       <div class="main-color"></div>
+    </div> -->
+
+    <div class="task">
+      <div>
+        <label for="">Select Font</label>
+        <select name="font" id="">
+          <option selected value="Cairo">Cairo Font</option>
+          <option value="Open Sans">Open Sans Font</option>
+          <option value="Roboto">Roboto Font</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="">Select Color</label>
+        <select name="colors" id="">
+          <option selected value="salmon">Salmon</option>
+          <option value="turquoise">Turquoise</option>
+          <option value="goldenrod">Goldenrod</option>
+          <option value="mediumorchid">Mediumorchid</option>
+          <option value="tomato">Tomato</option>
+          <option value="cornflowerblue">Cornflowerblue</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="">Select Font Size</label>
+        <select name="fontSize" id="">
+          <option selected value="16">16</option>
+          <option value="20">20</option>
+          <option value="22">22</option>
+          <option value="25">25</option>
+          <option value="27">27</option>
+          <option value="30">30</option>
+        </select>
+      </div>
+
+      <div class="screen">
+        <h2>This is the title</h2>
+        <p>This is the paragraph</p>
+        <p>You Can see changes here</p>
+      </div>
+    </div>
+
+    <div class="session">
+      <form action="">
+        <input type="text" name="firstName" />
+        <input type="text" name="lastName" />
+        <input type="color" name="color" />
+        <select name="names" id="">
+          <option value="Mohamed">Mohamed</option>
+          <option value="Ahmed">Ahmed</option>
+          <option value="Khaled">Khaled</option>
+        </select>
+      </form>
     </div>
     <script src="script.js"></script>
   </body>
