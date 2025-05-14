@@ -88,3 +88,34 @@ fetch("./articles.json")
     }
     document.body.innerHTML = article;
   });
+
+async function fetchData() {
+  let result = await fetch(
+    "https://api.github.com/users/MohamedAhIsmail/repos"
+  );
+  let data = await result.json();
+  console.log(data);
+}
+
+fetchData();
+
+//old
+
+fetch("https://api.example.com/data")
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
+
+// new
+
+async function getData() {
+  try {
+    let res = await fetch("https://api.example.com/data");
+    let data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+getData();
