@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "author": "Mohamed",
+    "category": "HTML",
+    "title": "Learn html from Elzero",
+    "content": "This is the content of the article"
+  },
+  {
+    "id": 1,
+    "author": "Ahmed",
+    "category": "CSS",
+    "title": "Learn CSS from Elzero",
+    "content": "This is the content of the article"
+  },
+  {
+    "id": 1,
+    "author": "Ali",
+    "category": "JavaScript",
+    "title": "Learn JS from Elzero",
+    "content": "This is the content of the article"
+  },
+  {
+    "id": 1,
+    "author": "Mohamed",
+    "category": "React",
+    "title": "Learn React from Elzero",
+    "content": "This is the content of the article"
+  },
+  {
+    "id": 1,
+    "author": "Tamer",
+    "category": "Tailwind",
+    "title": "Learn Tailwind from Elzero",
+    "content": "This is the content of the article"
+  }
+]
