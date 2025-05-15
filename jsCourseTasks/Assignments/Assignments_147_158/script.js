@@ -75,13 +75,13 @@ console.log(userOne instanceof User);
 console.log("#".repeat(40));
 
 class Admin extends User {
-  constructor (id, name, salary, permissions) {
-    super(id, name, salary)
-    this.permissions = permissions
+  constructor(id, name, salary, permissions) {
+    super(id, name, salary);
+    this.permissions = permissions;
   }
 }
 
-let admin1 = new Admin(110, "Mahmoud", 12999, 1)
+let admin1 = new Admin(110, "Mahmoud", 12999, 1);
 
 console.log(admin1.id);
 console.log(admin1.name);
@@ -91,15 +91,14 @@ console.log(admin1.permissions);
 
 console.log("#".repeat(60));
 
-
 class Superman extends Admin {
-  constructor (id, name, salary, permissions, ability){
-    super(id, name, salary, permissions)
-    this.ability = ability
+  constructor(id, name, salary, permissions, ability) {
+    super(id, name, salary, permissions);
+    this.ability = ability;
   }
 }
 
-let superman = new Superman(90, "SuperMan", 4000, 2, "Fly")
+let superman = new Superman(90, "SuperMan", 4000, 2, "Fly");
 
 console.log(superman.id);
 console.log(superman.name);
@@ -110,6 +109,44 @@ console.log(superman.ability);
 console.log(superman.sayHello());
 console.log(superman.msg());
 
-
-
 console.log(User.countUsers());
+
+console.log("#".repeat(40));
+
+// Encapsulation
+
+class Parent {
+  #salary
+  constructor (id, name, salary) {
+    this.id = id;
+    this.name = name
+    this.#salary = salary
+  }
+
+  calcSallry() {
+    return this.#salary * 2
+  }
+}
+
+let parent = new Parent(10, "Ahmed", 16000)
+
+console.log(parent.id);
+console.log(parent.name);
+console.log(parent.calcSallry());
+
+console.log("#".repeat(40));
+
+class Child extends Parent {
+  constructor(id, name, salary, poss){
+    super(id, name, salary )
+    this.poss = poss
+  }
+}
+
+let child = new Child(12, "Medo", 3400, "Frontend")
+
+console.log(child.id);
+console.log(child.name);
+console.log(child.calcSallry());
+
+
