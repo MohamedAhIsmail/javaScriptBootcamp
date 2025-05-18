@@ -1,7 +1,7 @@
 # JavaScript Bootcamp
 
 Welcome to my **JavaScript Bootcamp** repository!  
-This project documents my learning journey through an intensive JavaScript bootcamp, where I gained a strong foundation in modern JavaScript and applied my skills by building real-world projects.
+This repository documents my learning journey through an intensive JavaScript bootcamp, where I gained a strong foundation in modern JavaScript and applied my skills by building real-world projects.
 
 ## 🚀 What I Learned
 
